@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="rtianCalendar-1.css">
+        <style>
+            #mycalerdar {
+                width: 600px;
+                height: 700px;
+            }
+
+            .gz {
+                font-size: 10px;
+            }
+
+            .lunar>.terms,
+            .lunar1 {
+                color: #33f;
+            }
+
+            .term>.terms,
+            .term1 {
+                color: #f33;
+            }
+
+            .active>.terms {
+                color: #ff0;
+            }
+
+            .month-year>input {
+                width: 66px;
+                height: 100%;
+                display: inline-block;
+                border: 0;
+                text-align: center;
+                font: bold 1em "Microsoft YaHei";
+                vertical-align: center;
+            }
+        </style>
+        <script src="calendar-2.js"></script>
+        <!-- <script src="min.js"></script> -->
+        <script src="lunar.js"></script>
+    </head>
+
+    <body>
+        <div id="mycalerdar"></div>
+        <pre id="res"></pre>
+        <script type="text/javascript">
+            var mycalendar = new rtianCalendar('#mycalerdar');
+            mycalendar.render({
+                width: 'auto',
+                height: 'auto',
+                theme: 'block',
+                fontSize: 18,
+                date: '3358-10-04',
+                showLunar: true,
+                change: function (dt) {
+                    let y = mycalendar.year;
+                    let m = mycalendar.month;
+                },
+                renderLuna1r: function (data) {
+                    //默认显示农历日历和天干地支
+                    //此处可以自定义
+                    console.log(data);
+                }
+            });
+
+
+
+
+            // cal = calendar.getData(2025)
+            // let days = calendar.solar_yueLi(2025, 6)
+            //获取当前年份24节气
+            // Lunar.getData(1582);
+            // let terms = Lunar.solar_yueLi(1582, 10);
+            // document.getElementById('res').innerHTML = JSON.stringify(terms, null, 2);
+
+
+        </script>
+    </body>
+
+</html>
