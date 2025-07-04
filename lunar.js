@@ -182,7 +182,7 @@
             return SolarTerms[(idx + 23) % 24];
         } else {
             let y = JD2GL(jd)['Y'];
-            return (Round(jd) == Round(getJQ(y, 17)));
+            return (Round(jd) == Round(getJQ(y, 17)))?'大雪':'';
         }
     }
     function getCnZodiac(y) {
